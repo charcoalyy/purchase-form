@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<link href="purchase form.css" rel="stylesheet">
+<head>
+	<title>Uniform Purchase Form</title>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<p id="topofpage"></p>
+<nav class="uppercontainer">
+	<a href="#opening" class="top">Instructions</a>
+	<a href="#student-info" class="top">Uniform Request</a>
+	<a href="#payment-info" class="top">Payment</a>
+</nav>
+
+<body>
+
+<header class="emptycontainer">
+	<h1>Oakwood MS Uniform Purchase Form</h1>
+</header>
+
+<button>
+	<a href="#topofpage">▲</a>
+</button>
+
+<section class="bodycontainer">
+	<h2 class="sectioned" id="openingbox"><span id="opening"></span>Instructions</h2>
+	<p class="basic">Welcome to the uniform purchase form for incoming students of Oakwood Middle School. The form and payment do <em>not</em> have to be completed in one sitting; you may save your progress for later. However, the form will be closed on <em><strong>September 12th, 2012</strong></em>. Please pay before then. Listed are the acceptable payment methods: </p>
+	<ul class="basic">
+		<li>• Debit Card</li>
+		<li>• MasterCard</li>
+		<li>• Credit Card</li>
+	</ul>
+	<p class="basic">We are extremely excited to be welcoming our next cohort of bright-minded students to our building!</p>
+	
+	<form method="post" action="confirmation.php" class="basic">
+
+	<h2 class="sectioned"><span id="student-info"></span>Uniform Request</h2>
+	<p class="basic">Fill out the following according to your student's information. If you have <em><strong>more than one</strong></em> student attending the school, fill out this form multiple times, once for each student.</p><br>
+
+<section class="grid"> 
+	<section class="grid-left">
+		<label for="student-name" class="basic">First and Last Name: </label>
+		<input type="text" id="student-name" name="student-name" placeholder="Name" required>
+		<br>
+		<label for="grade" class="basic">Grade in September: </label>
+		<select id="grade" name="grade">
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+		</select>
+		<br><br>
+		<label for="size" class="basic">Clothing Size: </label><br>
+		<input class="slider" id="size" type="range" min="4" max="13" step="1" oninput="this.nextElementSibling.value = this.value" required>
+		<output>9</output>
+		<br>
+		<label for="shoe-size" class="basic">Shoe Size: </label><br>
+		<input class="slider" id="shoe-size" type="range" min="4" max="13" step="1" oninput="this.nextElementSibling.value = this.value" required>
+		<output>9</output>
+		<br><br>
+	</section>
+
+	<section class="grid-right">
+		<label for="choices" class="basic">Select the items you want to purchase: </label><br>
+		<input type="checkbox" id="choices" name="choices" value="pants"> Pants ($10.00) <br>
+		<input type="checkbox" id="choices" name="choices" value="skirt"> Skirt ($10.00) <br>
+		<input type="checkbox" id="choices" name="choices" value="shirt"> Collared Shirt ($7.00) <br>
+		<input type="checkbox" id="choices" name="choices" value="socks"> Socks ($5.00) <br>
+		<input type="checkbox" id="choices" name="choices" value="shoes"> Dress shoes ($7.00) <br>
+		<br>
+		<label class="basic">Select your preferred method of delivery: </label><br>
+		<input type="radio" name="delivery" id="house" value="house" required> Deliver directly to my house<br>
+		<input type="radio" name="delivery" id="school" value="school"> Deliver to the school (pick up at front desk)<br>
+	</section>
+</section>
+
+	<p class="basic">*We understand that not all students are able to purchase and/or wear uniforms. If your child falls into this description, and you would like to send in a special request, please send us a message below:</p>
+	<div class="stayinhere">
+	<textarea rows="10" name="special-req" placeholder="Reasons your child is unable to purchase/wear a uniform, etc."></textarea>
+	</div>
+	<br><br>
+
+	<h2 class="sectioned"><span id="payment-info"></span>Payment</h2>
+	<p class="basic">Ensure that all your information is correct before submitting, and print the next page to hold a record of your purchase.</p>
+	<label class="basic">Preferred payment method: </label>
+	<input list="payment-methods" id="payment" name="payment" placeholder="Type of Card" required>
+	<datalist id="payment-methods">
+		<option value="MasterCard"></option>
+		<option value="Debit Card"></option>
+		<option value="Credit Card"></option>
+	</datalist>
+	<br>
+
+	<label for="card-name" class="basic">Name On Card: </label>
+	<input type="text" name="card-name" id="card-name" placeholder="First Last" required>
+	<br>
+	<label for="card-num" class="basic">Card Number: </label>
+	<input type="text" id="card-num" name="card-num" pattern="[0-9]{9}" placeholder="123456789" required>
+	<br>
+	<label for="expiry" class="basic">Expiry Date: </label>
+	<input type="text" id="expiry" name="expiry" pattern="[0-9]{4}" placeholder="MMYY" required>
+	<br><br>
+</section>
+
+<section class="btmcontainer">
+	<input type="submit" value="SAVE FOR LATER" class="button" id="save">
+	<input type="submit" value="GO TO CHECKOUT" class="button" id="submit">
+</section>
+
+	</form>
+
+</body>
+
+</html>
